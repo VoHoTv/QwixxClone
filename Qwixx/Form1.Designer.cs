@@ -132,7 +132,7 @@
             this.Row0LockIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Row0LockIcon.Image = global::Qwixx.Properties.Resources.lockOpen;
             this.Row0LockIcon.Location = new System.Drawing.Point(618, 2);
-            this.Row0LockIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Row0LockIcon.Margin = new System.Windows.Forms.Padding(2);
             this.Row0LockIcon.Name = "Row0LockIcon";
             this.Row0LockIcon.Size = new System.Drawing.Size(55, 59);
             this.Row0LockIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +170,7 @@
             this.Row1LockIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Row1LockIcon.Image = global::Qwixx.Properties.Resources.lockOpen;
             this.Row1LockIcon.Location = new System.Drawing.Point(618, 2);
-            this.Row1LockIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Row1LockIcon.Margin = new System.Windows.Forms.Padding(2);
             this.Row1LockIcon.Name = "Row1LockIcon";
             this.Row1LockIcon.Size = new System.Drawing.Size(55, 59);
             this.Row1LockIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +208,7 @@
             this.Row2LockIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Row2LockIcon.Image = global::Qwixx.Properties.Resources.lockOpen;
             this.Row2LockIcon.Location = new System.Drawing.Point(618, 2);
-            this.Row2LockIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Row2LockIcon.Margin = new System.Windows.Forms.Padding(2);
             this.Row2LockIcon.Name = "Row2LockIcon";
             this.Row2LockIcon.Size = new System.Drawing.Size(55, 59);
             this.Row2LockIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +247,7 @@
             this.Row3LockIcon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Row3LockIcon.Image = global::Qwixx.Properties.Resources.lockOpen;
             this.Row3LockIcon.Location = new System.Drawing.Point(618, 2);
-            this.Row3LockIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Row3LockIcon.Margin = new System.Windows.Forms.Padding(2);
             this.Row3LockIcon.Name = "Row3LockIcon";
             this.Row3LockIcon.Size = new System.Drawing.Size(55, 59);
             this.Row3LockIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -262,7 +262,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -280,7 +280,7 @@
             this.tableLayoutPanel2.Controls.Add(this.numbersRow3, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -683,7 +683,7 @@
             this.BadThrowCheckbox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BadThrowCheckbox1.AutoSize = true;
             this.BadThrowCheckbox1.Location = new System.Drawing.Point(4, 9);
-            this.BadThrowCheckbox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BadThrowCheckbox1.Margin = new System.Windows.Forms.Padding(2);
             this.BadThrowCheckbox1.Name = "BadThrowCheckbox1";
             this.BadThrowCheckbox1.Size = new System.Drawing.Size(15, 14);
             this.BadThrowCheckbox1.TabIndex = 0;
@@ -696,7 +696,7 @@
             this.BadThrowCheckbox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BadThrowCheckbox2.AutoSize = true;
             this.BadThrowCheckbox2.Location = new System.Drawing.Point(27, 9);
-            this.BadThrowCheckbox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BadThrowCheckbox2.Margin = new System.Windows.Forms.Padding(2);
             this.BadThrowCheckbox2.Name = "BadThrowCheckbox2";
             this.BadThrowCheckbox2.Size = new System.Drawing.Size(15, 14);
             this.BadThrowCheckbox2.TabIndex = 1;
@@ -709,7 +709,7 @@
             this.BadThrowCheckbox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BadThrowCheckbox3.AutoSize = true;
             this.BadThrowCheckbox3.Location = new System.Drawing.Point(50, 9);
-            this.BadThrowCheckbox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BadThrowCheckbox3.Margin = new System.Windows.Forms.Padding(2);
             this.BadThrowCheckbox3.Name = "BadThrowCheckbox3";
             this.BadThrowCheckbox3.Size = new System.Drawing.Size(15, 14);
             this.BadThrowCheckbox3.TabIndex = 2;
@@ -722,7 +722,7 @@
             this.BadThrowCheckbox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BadThrowCheckbox4.AutoSize = true;
             this.BadThrowCheckbox4.Location = new System.Drawing.Point(73, 9);
-            this.BadThrowCheckbox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BadThrowCheckbox4.Margin = new System.Windows.Forms.Padding(2);
             this.BadThrowCheckbox4.Name = "BadThrowCheckbox4";
             this.BadThrowCheckbox4.Size = new System.Drawing.Size(15, 14);
             this.BadThrowCheckbox4.TabIndex = 3;
@@ -778,9 +778,9 @@
             this.tableLayoutPanel5.Controls.Add(this.label5, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.label6, 4, 0);
             this.tableLayoutPanel5.Controls.Add(this.label7, 6, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label8, 8, 0);
             this.tableLayoutPanel5.Controls.Add(this.label9, 10, 0);
             this.tableLayoutPanel5.Controls.Add(this.TotalScoreTxt, 11, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label8, 8, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 66);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -805,7 +805,7 @@
             // 
             this.TotalScoreRedTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalScoreRedTxt.Location = new System.Drawing.Point(56, 12);
-            this.TotalScoreRedTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TotalScoreRedTxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalScoreRedTxt.Name = "TotalScoreRedTxt";
             this.TotalScoreRedTxt.Size = new System.Drawing.Size(44, 20);
             this.TotalScoreRedTxt.TabIndex = 1;
@@ -814,7 +814,7 @@
             // 
             this.TotalScoreYellowTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalScoreYellowTxt.Location = new System.Drawing.Point(160, 12);
-            this.TotalScoreYellowTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TotalScoreYellowTxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalScoreYellowTxt.Name = "TotalScoreYellowTxt";
             this.TotalScoreYellowTxt.Size = new System.Drawing.Size(44, 20);
             this.TotalScoreYellowTxt.TabIndex = 2;
@@ -823,7 +823,7 @@
             // 
             this.TotalScoreGreenTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalScoreGreenTxt.Location = new System.Drawing.Point(264, 12);
-            this.TotalScoreGreenTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TotalScoreGreenTxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalScoreGreenTxt.Name = "TotalScoreGreenTxt";
             this.TotalScoreGreenTxt.Size = new System.Drawing.Size(44, 20);
             this.TotalScoreGreenTxt.TabIndex = 3;
@@ -832,7 +832,7 @@
             // 
             this.TotalScoreBlueTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TotalScoreBlueTxt.Location = new System.Drawing.Point(368, 12);
-            this.TotalScoreBlueTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TotalScoreBlueTxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalScoreBlueTxt.Name = "TotalScoreBlueTxt";
             this.TotalScoreBlueTxt.Size = new System.Drawing.Size(44, 20);
             this.TotalScoreBlueTxt.TabIndex = 4;
@@ -841,7 +841,7 @@
             // 
             this.MinusBadThrowsTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MinusBadThrowsTxt.Location = new System.Drawing.Point(472, 12);
-            this.MinusBadThrowsTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinusBadThrowsTxt.Margin = new System.Windows.Forms.Padding(2);
             this.MinusBadThrowsTxt.Name = "MinusBadThrowsTxt";
             this.MinusBadThrowsTxt.Size = new System.Drawing.Size(44, 20);
             this.MinusBadThrowsTxt.TabIndex = 5;
@@ -911,7 +911,7 @@
             this.TotalScoreTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TotalScoreTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TotalScoreTxt.Location = new System.Drawing.Point(574, 12);
-            this.TotalScoreTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TotalScoreTxt.Margin = new System.Windows.Forms.Padding(2);
             this.TotalScoreTxt.Name = "TotalScoreTxt";
             this.TotalScoreTxt.Size = new System.Drawing.Size(103, 20);
             this.TotalScoreTxt.TabIndex = 11;
@@ -922,7 +922,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 366);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.numbersRow1.ResumeLayout(false);

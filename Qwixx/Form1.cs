@@ -46,9 +46,8 @@ namespace Qwixx
                 Button button = new Button();
                 button.Text = (reversed ? 14 - j : j).ToString();
                 button.Dock = DockStyle.Fill;
-                button.Click += DisableLowerNumbers;
-                button.Click += UpdateLockIcon;
                 button.Click += UpdateTotalScoreColor;
+                button.Click += UpdateLockIcon;
                 button.Click += CheckIfGameIsOver;
                 button.Tag = row;
                 button.BackColor = buttonBackColor;
@@ -90,13 +89,22 @@ namespace Qwixx
             }
         }
 
-
         private void UpdateTotalScoreColor(object sender, EventArgs e)
         {
             if (!(sender is Button button)) return;
             // Get current row.
             int btnRowIndex = (int)((Button)sender).Tag;
-            TotalScoreColor[btnRowIndex]++;
+            
+            // If the button pressed is the last button in the row and the buttons crossed is not yet 5, show error.
+            if (button == Buttons[btnRowIndex][10] && TotalScoreColor[btnRowIndex] < 5)    
+            {
+                MessageBox.Show("A minimum of 5 previous buttons have to be checked in order for the row to be closed.");
+            } else
+            {
+                // Continue normal operations.
+                TotalScoreColor[btnRowIndex]++;
+                DisableLowerNumbers(sender, e);
+            }
         }
 
         // Checks if the game is over and if true it changes certain properties.
