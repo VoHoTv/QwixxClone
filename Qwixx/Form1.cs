@@ -20,26 +20,27 @@ namespace Qwixx
             Buttons = new[] { new List<Button>(), new List<Button>(), new List<Button>(), new List<Button>() };
 
             // Add row with buttons and add events
-            addRow(0, numbersRow1, Color.FromArgb(255, 192, 192));
-            addRow(1, numbersRow2, Color.FromArgb(255, 255, 192));
-            addRow(2, numbersRow3, Color.FromArgb(192, 255, 192), true);
-            addRow(3, numbersRow4, Color.FromArgb(192, 192, 255), true);
+            AddRow(0, numbersRow1, Color.FromArgb(255, 192, 192));
+            AddRow(1, numbersRow2, Color.FromArgb(255, 255, 192));
+            AddRow(2, numbersRow3, Color.FromArgb(192, 255, 192), true);
+            AddRow(3, numbersRow4, Color.FromArgb(192, 192, 255), true);
 
             // Lock Icon displayed at the end of a row.
-            LockIcons = new[] { row0LockIcon, row1LockIcon, row2LockIcon, row3LockIcon };
+            LockIcons = new[] { Row0LockIcon, Row1LockIcon, Row2LockIcon, Row3LockIcon };
 
-            rowsDisabled = 0;
-            totalScoreColor = new[] { 0, 0, 0, 0 };
+            // Set default states
+            TotalScoreColor = new[] { 0, 0, 0, 0 };
         }
 
         List<Button>[] Buttons;
         PictureBox[] LockIcons;
-        int[] totalScoreColor;
-        int rowsDisabled, badThrows;
+        int[] TotalScoreColor;
+        int RowsDisabled, BadThrows;
 
         // Makes a new row with buttons, adds events to those buttons and adds them to the Buttons list.
-        private void addRow(int row, TableLayoutPanel RowControl, Color buttonBackColor, bool reversed = false)
+        private void AddRow(int row, TableLayoutPanel RowControl, Color buttonBackColor, bool reversed = false)
         {
+            // Makes button and add properties + additional operations.
             for (int j = 2; j < 13; j++)
             {
                 Button button = new Button();
@@ -47,11 +48,13 @@ namespace Qwixx
                 button.Dock = DockStyle.Fill;
                 button.Click += DisableLowerNumbers;
                 button.Click += UpdateLockIcon;
-                button.Click += updateTotalScoreColor;
-                button.Click += checkIfGameIsOver;
+                button.Click += UpdateTotalScoreColor;
+                button.Click += CheckIfGameIsOver;
                 button.Tag = row;
                 button.BackColor = buttonBackColor;
+                // Add button to the button list of the current row.
                 Buttons[row].Add(button);
+                // Add button to the parameter of TableLayoutPanel
                 RowControl.Controls.Add(button, j - 2, 0);
             }
         }
@@ -59,15 +62,17 @@ namespace Qwixx
         // Disable all numbers left of the pressed button.
         private void DisableLowerNumbers(object sender, EventArgs e)
         {
+            // If sender is button, initiliaze button instance.
             if (!(sender is Button button)) return;
 
             // Get current row.
             int btnRowIndex = (int)((Button)sender).Tag;
  
-            foreach (Button SingleButton in Buttons[btnRowIndex])
+            // Loops over each previous button till it hits current button, then stops.
+            foreach (Button singleButton in Buttons[btnRowIndex])
             {
-                SingleButton.Enabled = false;
-                if (SingleButton == button)
+                singleButton.Enabled = false;
+                if (singleButton == button)
                 {
                     break;
                 }
@@ -78,38 +83,43 @@ namespace Qwixx
         private void UpdateLockIcon(object sender, EventArgs e)
         {
             // Get current row.
-            int BtnRowIndex = (int)((Button)sender).Tag;
-            if (Buttons[BtnRowIndex][10].Enabled == false)
+            int btnRowIndex = (int)((Button)sender).Tag;
+            if (Buttons[btnRowIndex][10].Enabled == false)
             {
-                LockIcons[BtnRowIndex].Image = Properties.Resources.lockClosed;
+                LockIcons[btnRowIndex].Image = Properties.Resources.lockClosed;
             }
         }
 
-        private void updateTotalScoreColor(object sender, EventArgs e)
+
+        private void UpdateTotalScoreColor(object sender, EventArgs e)
         {
             if (!(sender is Button button)) return;
             // Get current row.
-            int BtnRowIndex = (int)((Button)sender).Tag;
-            totalScoreColor[BtnRowIndex]++;
+            int btnRowIndex = (int)((Button)sender).Tag;
+            TotalScoreColor[btnRowIndex]++;
         }
 
-        private void checkIfGameIsOver(object sender, EventArgs e)
+        // Checks if the game is over and if true it changes certain properties.
+        private void CheckIfGameIsOver(object sender, EventArgs e)
         {
-            updateRowsDisabled();
-            updateBadThrows();
-            if (rowsDisabled >= 2 || badThrows >= 4)
+            UpdateRowsDisabled();
+            UpdateBadThrows();
+            if (RowsDisabled >= 2 || BadThrows >= 4)
             {
-                totalScoreRedTxt.Text = getScore(totalScoreColor[0]).ToString();
-                totalScoreYellowTxt.Text = getScore(totalScoreColor[1]).ToString();
-                totalScoreGreenTxt.Text = getScore(totalScoreColor[2]).ToString();
-                totalScoreBlueTxt.Text = getScore(totalScoreColor[3]).ToString();
+                // Display total score for each color.
+                TotalScoreRedTxt.Text = GetScore(TotalScoreColor[0]).ToString();
+                TotalScoreYellowTxt.Text = GetScore(TotalScoreColor[1]).ToString();
+                TotalScoreGreenTxt.Text = GetScore(TotalScoreColor[2]).ToString();
+                TotalScoreBlueTxt.Text = GetScore(TotalScoreColor[3]).ToString();
 
-                minusBadThrowsTxt.Text = (badThrows * 5).ToString();
+                // Display points which will be subtracted because of BadThrows.
+                MinusBadThrowsTxt.Text = (BadThrows * 5).ToString();
 
-                int totalScore = totalScoreColor.Sum() - badThrows * 5;
-                totalScoreTxt.Text = totalScore.ToString();
+                // Calculate and display total sum.
+                int totalScore = TotalScoreColor.Sum() - BadThrows * 5;
+                TotalScoreTxt.Text = totalScore.ToString();
 
-
+                // Disable all buttons.
                 for (int i = 0; i < 4; i++)
                 {
                     foreach (Button singleButton in Buttons[i])
@@ -121,34 +131,41 @@ namespace Qwixx
             }
         }
 
-        private void updateRowsDisabled()
+        // Updates the RowsDisabled variable
+        private void UpdateRowsDisabled()
         {
-            rowsDisabled = 0;
+            // Reset bad throws to avoid concatenation of previous set values.
+            RowsDisabled = 0;
+            // Loop over last button in each row and check if it's Enabled. If not, add 1 to RowsDisabled variable.
             for (int i = 0; i < 4; i++)
             {
                 if (Buttons[i][10].Enabled == false)
                 {
-                    rowsDisabled++;
+                    RowsDisabled++;
                 }
             }
         }
 
-        private void updateBadThrows()
+        // Updates the BadThrows variable
+        private void UpdateBadThrows()
         {
-            bool[] badThrowCheckboxes = { badThrowCheckbox1.Checked, badThrowCheckbox2.Checked, badThrowCheckbox3.Checked, badThrowCheckbox4.Checked };
+            // Select all checboxes and store the boolean of whether it's checked.
+            bool[] isBadThrowChecked = { BadThrowCheckbox1.Checked, BadThrowCheckbox2.Checked, BadThrowCheckbox3.Checked, BadThrowCheckbox4.Checked };
 
-            badThrows = 0;
-            foreach (bool checkbox in badThrowCheckboxes)
+            // Reset bad throws to avoid concatenation of previous set values.
+            BadThrows = 0;
+            // Loop over each checkbox and check it's state, if checked add 1 to BadThrows variable.
+            foreach (bool isChecked in isBadThrowChecked)
             {
-                if (checkbox)
+                if (isChecked)
                 {
-                    badThrows++;
+                    BadThrows++;
                 }
             }
         }
 
         // Return score based on the table values in the GUI.
-        private int getScore(int crossesChecked)
+        private int GetScore(int crossesChecked)
         {
             int score = 0;
             switch (crossesChecked)
