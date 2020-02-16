@@ -106,11 +106,17 @@ namespace Qwixx
             UpdateBadThrows();
             if (RowsDisabled >= 2 || BadThrows >= 4)
             {
+                // Loop over final amount of "crosses" set per row and convert them to their point value.
+                for (int i = 0; i < TotalScoreColor.Count(); i++)
+                {
+                    TotalScoreColor[i] = GetScore(TotalScoreColor[i]);
+                }
+
                 // Display total score for each color.
-                TotalScoreRedTxt.Text = GetScore(TotalScoreColor[0]).ToString();
-                TotalScoreYellowTxt.Text = GetScore(TotalScoreColor[1]).ToString();
-                TotalScoreGreenTxt.Text = GetScore(TotalScoreColor[2]).ToString();
-                TotalScoreBlueTxt.Text = GetScore(TotalScoreColor[3]).ToString();
+                TotalScoreRedTxt.Text = TotalScoreColor[0].ToString();
+                TotalScoreYellowTxt.Text = TotalScoreColor[1].ToString();
+                TotalScoreGreenTxt.Text = TotalScoreColor[2].ToString();
+                TotalScoreBlueTxt.Text = TotalScoreColor[3].ToString();
 
                 // Display points which will be subtracted because of BadThrows.
                 MinusBadThrowsTxt.Text = (BadThrows * 5).ToString();
