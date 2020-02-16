@@ -147,6 +147,7 @@ namespace Qwixx
             }
         }
 
+        // Return score based on the table values in the GUI.
         private int getScore(int crossesChecked)
         {
             int score = 0;
