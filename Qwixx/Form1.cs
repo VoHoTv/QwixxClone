@@ -102,8 +102,15 @@ namespace Qwixx
             } else
             {
                 // Continue normal operations.
-                TotalScoreColor[btnRowIndex]++;
                 DisableLowerNumbers(sender, e);
+                // Add extra point for current row if the last button is disabled and thus the row is locked.
+                if (Buttons[btnRowIndex][10].Enabled == false)
+                {
+                    TotalScoreColor[btnRowIndex] += 2;
+                } else
+                {
+                    TotalScoreColor[btnRowIndex]++;
+                }
             }
         }
 
